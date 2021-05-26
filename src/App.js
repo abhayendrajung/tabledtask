@@ -37,33 +37,37 @@ setModal(true)
   }
  
   
-  return (
-    <div className="App container">
+  return (    
+
+    <div className="container col sm-4">
+  <div className="row">
+    
+
       
-      <h1>Ouestions Tasks </h1>
+      <h1 className="heading1">Ouestions Tasks </h1>
       <InfiniteScroll dataLength={api_data.length}
       next={()=>setPage(page+1)}
       hasMore={true}
       loader={<h4>Loading...</h4>}>
       
-      <table>
+      <table  className ="table   table-hover">
       <thead   >
               <tr>
-                <th>Author</th>
-                <th>Title</th>
-                <th>Creation Date</th>
+                <th scope="col">Author</th>
+                <th scope="col">Title</th>
+                <th scope="col">Creation Date</th>
                 </tr>
                 </thead>
                 <tbody>
       {api_data.map((i) => {
         return(
-          <tr  ><td><p>{i.owner.display_name}</p></td>
-          <td><button onClick={()=>openModal(i)}>{i.title}</button></td>
-          <td> <Moment format="DD MMM YYYY  h:mm A" utc>
+          <tr ><td  ><button className=" button_modal" onClick={()=>openModal(i)}>{i.owner.display_name}</button></td>
+          <td ><button className=" button_modal" onClick={()=>openModal(i)}>{i.title}</button></td>
+          <td ><button className=" button_modal" onClick={()=>openModal(i)}> <Moment format="DD MMM YYYY  h:mm A" utc>
                         {i.creation_date}
-                      </Moment></td>
+                      </Moment></button>  </td>  
           </tr>
-          
+       
 )
 
       })}</tbody></table> 
@@ -77,12 +81,26 @@ setModal(true)
      style={customStyles }
      contentLabel="Example Modal"
      >
-       <button className="modall" onClick={()=>setModal(false)}>X</button>
-<h2>{head.title}</h2>
-<a href={head.link}  target="blank">Click Me</a>
-
-     </Modal>
+          <div className="container">
+          <div className="row">
+            <div className="col-12 ">
+              <h2>{head.title}</h2>
+              <i
+                className="fas fa-times cross"
+                onClick={() => setModal(false)}
+              ></i>
+            </div>
+            <div className="anchor">
+              <a href={head.link} target="blank" className="linktab">
+                Click Me
+              </a>
+            </div>
+          </div>
+        </div>
+      </Modal>
     </div>
+     </div>
+   
   );
 }
 

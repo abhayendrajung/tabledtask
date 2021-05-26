@@ -40,5 +40,41 @@
 
  text-decoration: none;
   position: absolute ;
- right:0;
+  right:20px;
+  border:none
+}
+.button_modal{
+    margin-top :none;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;        
+
+}
+.modal_link{
+  justify-content: center;
+}
+.heading1{
+  text-align: center;
+}
+.test{
+margin: bottom 10px;
+  border-color:  black !important;
+}
+.linktab {
+  /* text-align: center !important; */
+  margin: auto;
+}
+
+.cross {
+  color: red;
+  font-size: 25px;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+.anchor {
+  text-align: center;
+  margin: 10px 0;
 }
